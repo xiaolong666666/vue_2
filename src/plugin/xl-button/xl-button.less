@@ -1,0 +1,51 @@
+@primary: #1677ff;
+@warning: #faad14;
+@success: #52c41a;
+@error: #ff4d4f;
+@white: white;
+
+.xl-btn {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  width: 80px;
+  height: 40px;
+  border-radius: 5%;
+  margin: 0 8px;
+  padding: 8px;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+  cursor: pointer;
+
+  .iconfont {
+    margin-right: 4px;
+  }
+}
+
+.common-btn(@bgColor, @borderColor, @color) {
+  background-color: @bgColor;
+  border: 1px solid @borderColor;
+  color: @color;
+}
+
+.default {
+  .common-btn(@white, #d9d9d9, #333);
+}
+
+.primary {
+  .common-btn(@primary, @primary, @white);
+}
+
+.warning {
+  .common-btn(@warning, @warning, @white);
+}
+
+.success {
+  .common-btn(@success, @success, @white);
+}
+
+.error {
+  .common-btn(@error, @error, @white);
+}
