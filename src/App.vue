@@ -1,6 +1,22 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <ul class="nav-wrapper">
+      <li class="nav-item">
+        <router-link :to="{ name: '首页' }">首页</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/todo-list">TodoList</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/events">Events</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/component-high">组件高阶</router-link>
+      </li>
+    </ul>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -12,11 +28,24 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+
+  .nav-item {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 4rem;
+  }
 }
 </style>

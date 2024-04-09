@@ -1,5 +1,5 @@
 <template>
-  <li :class="{ completed: todo.done, editing: todo === this.editedTodo }">
+  <li :class="{ completed: todo.done, editing: isEditing }">
     <div class="view">
       <input type="checkbox" v-model="editedTodo.done" class="toggle" />
       <label @dblclick="toEdit">{{ todo.value }}</label>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "todo-item",
+  name: "todo-list-item",
   props: {
     todo: {
       type: Object,
@@ -31,15 +31,16 @@ export default {
     return {
       editedTodo: {},
       temp: "",
+      isEditing: false,
     };
   },
   methods: {
     toEdit() {
-      this.editedTodo = this.todo;
+      this.isEditing = true;
       this.temp = this.todo.value;
     },
     onEditOk() {
-      this.editedTodo = {};
+      this.isEditing = false;
       this.temp = "";
     },
     onEditEsc() {
@@ -55,5 +56,15 @@ export default {
       el.focus();
     },
   },
+  created() {
+    this.editedTodo = this.todo;
+  },
+  beforeDestroy() {
+    this.editedTodo = {};
+  },
 };
 </script>
+
+<style lang="less" scoped>
+@import "~@/components/TodoList/index.less";
+</style>

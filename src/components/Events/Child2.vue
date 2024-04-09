@@ -1,12 +1,20 @@
 <template>
   <div>
     <h2>Child2</h2>
+    <slot name="main" :slotMessage="slotMessage" />
+    <p>{{ name }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "EventChild2",
+  inject: ["name"],
+  data() {
+    return {
+      slotMessage: "child2_slotMessage",
+    };
+  },
   methods: {
     receiveInfo(info) {
       console.log("child2 receiveInfo: ", info);

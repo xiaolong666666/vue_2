@@ -1,6 +1,9 @@
 <template>
   <div>
     <h2>Child1</h2>
+    <slot name="header"></slot>
+    <slot />
+    <slot name="footer" />
   </div>
 </template>
 

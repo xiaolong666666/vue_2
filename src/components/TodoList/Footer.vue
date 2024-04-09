@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: "todo-footer",
+  name: "todo-list-footer",
   data() {
     return {
       viewList: [
@@ -68,3 +68,7 @@ export default {
   },
 };
 </script>
+
+<style lang="less" scoped>
+@import "~@/components/TodoList/index.less";
+</style>
