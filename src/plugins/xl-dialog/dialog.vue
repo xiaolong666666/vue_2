@@ -21,7 +21,7 @@ export default {
   name: "xl-dialog",
   data() {
     return {
-      visible: true,
+      visible: false,
     };
   },
   methods: {

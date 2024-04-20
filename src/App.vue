@@ -1,23 +1,25 @@
 <template>
-  <div id="app">
-    <ul class="nav-wrapper">
-      <li class="nav-item">
-        <router-link :to="{ name: '首页' }">首页</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/todo-list">TodoList</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/events">Events</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/component-high">组件高阶</router-link>
-      </li>
-    </ul>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
-  </div>
+  <error-boundary>
+    <div id="app">
+      <ul class="nav-wrapper">
+        <li class="nav-item">
+          <router-link :to="{ name: '首页' }">首页</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/todo-list">TodoList</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/events">Events</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/component-high">组件高阶</router-link>
+        </li>
+      </ul>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </div>
+  </error-boundary>
 </template>
 
 <script>
