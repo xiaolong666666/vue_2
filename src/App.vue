@@ -14,9 +14,12 @@
         <li class="nav-item">
           <router-link to="/component-high">组件高阶</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/albums">专辑💽</router-link>
+        </li>
       </ul>
       <keep-alive>
-        <router-view></router-view>
+        <router-view v-cloak></router-view>
       </keep-alive>
     </div>
   </error-boundary>
@@ -29,6 +32,9 @@ export default {
 </script>
 
 <style>
+[v-cloak] {
+  display: none;
+}
 #app {
   width: 100vw;
   height: 100vh;

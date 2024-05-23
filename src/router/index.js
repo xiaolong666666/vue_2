@@ -8,6 +8,7 @@ import Demo from "@/views/Demo";
 import Events from "@/views/Events";
 import Transition from "@/views/Transition";
 import ComponentHigh from "@/views/ComponentHigh";
+import Albums from "@/views/Albums";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,10 @@ const routes = [
   {
     path: "/component-high",
     component: ComponentHigh,
+  },
+  {
+    path: "/albums",
+    component: Albums,
   },
 ];
 
