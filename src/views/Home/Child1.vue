@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>Child1</h3>
+    <input type="text" v-focus />
     <div>
       <pre>{{ JSON.stringify(info) }}</pre>
     </div>
